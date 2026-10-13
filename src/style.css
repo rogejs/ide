@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+@layer components {
+    .btn {
+        @apply inline-flex p-2 transition-all duration-300 disabled:opacity-50 disabled:pointer-events-none;
+    }
+}
+
+@layer utility {
+    .btn-primary--danger {
+        @apply bg-red-500 text-red-50 hover:bg-red-400;
+    }
+}
