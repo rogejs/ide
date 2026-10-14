@@ -1,0 +1,20 @@
+{
+  "sidebar": {
+    "explorer": "Trình khám phá",
+    "search": "Tìm kiếm",
+    "git": "Quản lý mã nguồn"
+  },
+  "titlebar": {
+    "minimize": "Thu nhỏ",
+    "maximize": "Phóng to",
+    "close": "Đóng"
+  },
+  "settings": {
+    "language": "Ngôn ngữ"
+  },
+  "explorer": {
+    "noFolder": "Chưa mở thư mục nào",
+    "openFolder": "Mở thư mục",
+    "empty": "Thư mục trống"
+  }
+}

@@ -67,9 +67,8 @@ function Flex({
   return (
     <div
       className={cn(
-        "w-auto",
         display,
-        direction,
+        directions[direction],
         justifies[justify],
         gaps[gap],
         alignItems[alignItem],

@@ -1,0 +1,20 @@
+{
+  "sidebar": {
+    "explorer": "Explorer",
+    "search": "Search",
+    "git": "Source Control"
+  },
+  "titlebar": {
+    "minimize": "Minimize",
+    "maximize": "Maximize",
+    "close": "Close"
+  },
+  "settings": {
+    "language": "Language"
+  },
+  "explorer": {
+    "noFolder": "No folder opened",
+    "openFolder": "Open Folder",
+    "empty": "This folder is empty"
+  }
+}

@@ -8,14 +8,15 @@ import Button from "../ui/Button";
 import Box from "../ui/layouts/Box";
 import Flex from "../ui/layouts/Flex";
 import { TextInline } from "../ui/typography/TextInline";
+import MenuTitlebar from "./Menu";
 
 const appWindow = getCurrentWindow();
 
 function TitleBar() {
   return (
-    <Box data-tauri-drag-region className="px-0">
+    <Box data-tauri-drag-region className="px-0 w-full">
       <Flex data-tauri-drag-region justify="between">
-        <div>menubar</div>
+        <MenuTitlebar />
         <TextInline
           data-tauri-drag-region
           className="cursor-default"
@@ -25,13 +26,26 @@ function TitleBar() {
           Roge Code
         </TextInline>
         <Flex gap={0}>
-          <Button onClick={() => appWindow.minimize()}>
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={() => appWindow.minimize()}
+          >
             <DividerHorizontalIcon />
           </Button>
-          <Button onClick={() => appWindow.toggleMaximize()}>
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={() => appWindow.toggleMaximize()}
+          >
             <BoxIcon />
           </Button>
-          <Button danger onClick={() => appWindow.close()}>
+          <Button
+            variant="secondary"
+            size="sm"
+            danger
+            onClick={() => appWindow.close()}
+          >
             <Cross1Icon />
           </Button>
         </Flex>
