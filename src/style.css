@@ -1,13 +1,63 @@
 @import "tailwindcss";
 
+:root {
+    --background: oklch(98.4% 0.003 247.858);
+    --foreground: oklch(14.5% 0 none);
+    --primary-1: oklch(51.1% 0.262 276.966);
+    --primary-foreground: oklch(96.2% 0.018 272.314);
+    --primary-2: oklch(58.5% 0.233 277.117);
+    --secondary-1: oklch(98.5% 0 none);
+    --secondary-foreground: oklch(14.1% 0.005 285.823);
+    --secondary-2: oklch(92% 0.004 286.32);
+    --accent: oklch(87% 0 none);
+    --accent-foreground: oklch(37.1% 0 none);
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-primary-1: var(--primary-1);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary-2: var(--primary-2);
+    --color-secondary-1: var(--secondary-1);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary-2: var(--secondary-2);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+}
+
+@layer base {
+    html,
+    body,
+    #root {
+        @apply h-dvh bg-background text-foreground;
+    }
+}
+
 @layer components {
     .btn {
-        @apply inline-flex p-2 transition-all duration-300 disabled:opacity-50 disabled:pointer-events-none;
+        @apply inline-flex font-medium rounded-md transition-all duration-300 disabled:opacity-50 disabled:pointer-events-none cursor-default;
     }
 }
 
 @layer utility {
+    .btn-primary {
+        @apply bg-primary-1 text-primary-foreground hover:bg-primary-2;
+    }
+
+    .btn-secondary {
+        @apply bg-secondary-1 text-secondary-foreground hover:bg-secondary-2;
+    }
+
     .btn-primary--danger {
         @apply bg-red-500 text-red-50 hover:bg-red-400;
+    }
+
+    .btn-ghost {
+        @apply bg-transparent text-secondary-foreground hover:bg-secondary-2;
+    }
+
+    .btn-sm {
+        @apply text-sm p-1.5 [&_svg]:size-3;
     }
 }
