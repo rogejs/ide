@@ -5,7 +5,7 @@ import {
   MenubarItem,
   MenubarSeparator,
   MenubarTrigger,
-} from "../ui/Menubar";
+} from "../../ui/Menubar";
 
 export default function MenuTitlebar() {
   return (

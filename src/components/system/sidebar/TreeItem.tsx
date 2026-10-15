@@ -1,4 +1,4 @@
-import { FileIcon } from "@radix-ui/react-icons";
+// import { FileIcon } from "@radix-ui/react-icons";
 import { TextInline } from "@/components/ui/typography/TextInline";
 
 export default function TreeItem({

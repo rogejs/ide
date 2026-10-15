@@ -11,6 +11,9 @@
     --secondary-2: oklch(92% 0.004 286.32);
     --accent: oklch(87% 0 none);
     --accent-foreground: oklch(37.1% 0 none);
+    --destructive-1: oklch(50.5% 0.213 27.518);
+    --destructive-foreground: oklch(97.1% 0.013 17.38);
+    --destructive-2: oklch(63.7% 0.237 25.331);
 }
 
 @theme inline {
@@ -24,6 +27,9 @@
     --color-secondary-2: var(--secondary-2);
     --color-accent: var(--accent);
     --color-accent-foreground: var(--accent-foreground);
+    --color-destructive-1: var(--destructive-1);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-destructive-2: var(--destructive-2);
 }
 
 @layer base {
@@ -49,15 +55,23 @@
         @apply bg-secondary-1 text-secondary-foreground hover:bg-secondary-2;
     }
 
+    .btn-secondary--danger {
+        @apply bg-secondary-1 text-destructive-1 hover:bg-destructive-2 hover:text-destructive-foreground;
+    }
+
     .btn-primary--danger {
-        @apply bg-red-500 text-red-50 hover:bg-red-400;
+        @apply bg-destructive-1 text-destructive-foreground hover:bg-destructive-2;
     }
 
     .btn-ghost {
         @apply bg-transparent text-secondary-foreground hover:bg-secondary-2;
     }
 
+    .btn-ghost--danger {
+        @apply bg-transparent text-destructive-1 hover:bg-destructive-2;
+    }
+
     .btn-sm {
-        @apply text-sm p-1.5 [&_svg]:size-3;
+        @apply text-sm p-1.5 [&_svg]:size-3.5;
     }
 }

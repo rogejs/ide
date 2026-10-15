@@ -1,13 +1,13 @@
 import { useAppStore } from "@lavaz/store";
 import { useTranslation } from "react-i18next";
 import { store } from "@/store/store";
-import Explorer from "./system/sidebar/Explorer";
 import {
   Sidebar,
   SidebarContent,
   SidebarHeader,
   SidebarTitle,
-} from "./ui/Sidebar";
+} from "../../ui/Sidebar";
+import Explorer from "./Explorer";
 
 export default function AppSidebar() {
   const { t } = useTranslation();
