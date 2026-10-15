@@ -9,7 +9,7 @@ export default function TreeItem({
   return (
     <div>
       {/*{node.isDir  <FileIcon />}*/}
-      <TextInline>{node.name}</TextInline>
+      <TextInline className="text-sm">{node.name}</TextInline>
     </div>
   );
 }
