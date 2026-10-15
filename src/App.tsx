@@ -1,8 +1,8 @@
 import { Group, Panel, Separator } from "react-resizable-panels";
-import TitleBar from "./components/system/TitleBar";
+import TitleBar from "./components/system/titlebar/TitleBar";
 import Box from "./components/ui/layouts/Box";
 import "./style.css";
-import AppSidebar from "./components/AppSidebar";
+import AppSidebar from "./components/system/sidebar/AppSidebar";
 import Flex from "./components/ui/layouts/Flex";
 
 function App() {
