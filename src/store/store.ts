@@ -1,6 +1,10 @@
 import { createStore } from "@lavaz/store";
-import { sidebarViewBox } from "./boxes/sidebar-view.box";
+import { explorerBox } from "./boxes/explorer.box";
+import { fileEntryBox } from "./boxes/file-entry.box";
+import { sidebarBox } from "./boxes/sidebar.box";
 
 export const store = createStore({
-  sidebarView: sidebarViewBox,
+  fileEntry: fileEntryBox,
+  explorer: explorerBox,
+  sidebar: sidebarBox,
 });

@@ -1,3 +1,4 @@
+import { Slot } from "radix-ui";
 import type { ComponentProps, ReactNode } from "react";
 import cn from "@/libs/utils/cn";
 
@@ -41,10 +42,44 @@ function SidebarContent({ className, ...props }: ComponentProps<"div">) {
   );
 }
 
+function SidebarGroup({
+  children,
+  className,
+  ...props
+}: ComponentProps<"div">) {
+  return (
+    <div className={cn("flex flex-col gap-0", className)} {...props}>
+      {children}
+    </div>
+  );
+}
+
+function SidebarGroupItem({
+  children,
+  className,
+  as = "default",
+  ...props
+}: ComponentProps<"button"> & { as?: "default" | "children" }) {
+  const Comp = as === "default" ? "button" : Slot.Root;
+  return (
+    <Comp
+      className={cn(
+        "btn px-1 py-1.5 text-secondary-foreground bg-secondary-1 hover:bg-secondary-2 w-full [&_svg]:size-3.5",
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </Comp>
+  );
+}
+
 export {
   Sidebar,
   SidebarContent,
   SidebarDescription,
+  SidebarGroup,
+  SidebarGroupItem,
   SidebarHeader,
   SidebarTitle,
 };

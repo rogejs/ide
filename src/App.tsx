@@ -1,11 +1,26 @@
 import { Group, Panel, Separator } from "react-resizable-panels";
 import TitleBar from "./components/system/titlebar/TitleBar";
-import Box from "./components/ui/layouts/Box";
 import "./style.css";
+import { useEffect } from "react";
 import AppSidebar from "./components/system/sidebar/AppSidebar";
 import Flex from "./components/ui/layouts/Flex";
+import { useFolder } from "./hooks/system/use-folder";
 
 function App() {
+  const { openFolder } = useFolder();
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLocaleLowerCase() === "o") {
+        e.preventDefault();
+        openFolder();
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [openFolder]);
+
   return (
     <Flex direction="vertical" className="h-dvh">
       <TitleBar />
