@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
-    --background: oklch(98.4% 0.003 247.858);
+    --background: oklch(98.5% 0 none);
     --foreground: oklch(14.5% 0 none);
+    --surface: oklch(92% 0.004 286.32);
     --primary-1: oklch(51.1% 0.262 276.966);
     --primary-foreground: oklch(96.2% 0.018 272.314);
     --primary-2: oklch(58.5% 0.233 277.117);
@@ -19,6 +20,7 @@
 @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
+    --color-surface: var(--surface);
     --color-primary-1: var(--primary-1);
     --color-primary-foreground: var(--primary-foreground);
     --color-primary-2: var(--primary-2);
@@ -42,11 +44,26 @@
 
 @layer components {
     .btn {
-        @apply inline-flex font-medium rounded-md transition-all duration-300 disabled:opacity-50 disabled:pointer-events-none cursor-default;
+        @apply inline-flex items-center gap-1.5 font-medium rounded-md transition-all duration-300 disabled:opacity-50 disabled:pointer-events-none cursor-default;
+    }
+
+    .sidebar-item-system--open {
+        background-color: var(--surface);
+        padding: 8px 0;
+        height: auto;
+    }
+
+    .sidebar-item-system--close {
+        padding: 0;
+        height: 0;
     }
 }
 
 @layer utility {
+    .smooth {
+        @apply transition-all duration-300;
+    }
+
     .btn-primary {
         @apply bg-primary-1 text-primary-foreground hover:bg-primary-2;
     }
@@ -73,5 +90,9 @@
 
     .btn-sm {
         @apply text-sm p-1.5 [&_svg]:size-3.5;
+    }
+
+    .btn-md {
+        @apply p-1.5 [&_svg]:size-4;
     }
 }
